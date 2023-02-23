@@ -1,0 +1,130 @@
+/// Main Styles File
+/// Here we import all the global Styles files we need for our project.
+
+@import "styles/normalize.scss";
+@import "styles/root.scss";
+@import "styles/fonts.scss";
+
+// mixins
+@mixin image {
+  padding: 0.875rem;
+  border-radius: 14px;
+}
+// global resets //
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+p {
+  color: var(--color-on-surface);
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+}
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-primary-dark);
+  padding: 1rem;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  @media (min-width: 834px) {
+    padding: 20%;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6.813rem;
+    padding: 159px 152px 140px 152px;
+  }
+  &__heading,
+  &__description {
+    text-align: left;
+    color: var(--color-secondary-white);
+  }
+  &__heading {
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.2%;
+    font-size: 2rem;
+    @media (min-width: 834px) {
+      font-size: 3rem;
+    }
+  }
+  &__description {
+    line-height: 24px;
+  }
+  &__hero {
+    margin-bottom: 1.5rem;
+    @media (min-width: 1440px) {
+      align-self: flex-start;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  text-align: center;
+  @media (min-width: 834px) {
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(2, 2fr);
+  }
+  div {
+    background-color: var(--color-secondary-gray);
+    border-radius: 20px;
+    padding: 1.25rem;
+    line-height: 22px;
+  }
+  &__heading {
+    color: var(--color-secondary-white);
+    font-weight: 500;
+    padding: 1rem 0;
+  }
+  &__description {
+    color: var(--color-secondary-text);
+    font-size: 14px;
+  }
+  &__learning {
+    img {
+      background-color: var(--color-primary-purple-bg);
+      @include image;
+    }
+  }
+  &__vision {
+    img {
+      background-color: var(--color-primary-blue-bg);
+      @include image;
+    }
+  }
+  &__language {
+    img {
+      background-color: var(--color-primary-sky-bg);
+      @include image;
+    }
+  }
+  &__robotics {
+    img {
+      background-color: var(--color-primary-yellow-bg);
+      @include image;
+    }
+  }
+}
